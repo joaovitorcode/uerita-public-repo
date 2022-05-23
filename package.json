@@ -1,0 +1,46 @@
+{
+  "name": "uerita",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.8.8",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@hookform/resolvers": "^2.8.8",
+    "firebase": "^9.6.11",
+    "framer-motion": "^6",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.3",
+    "next": "12.1.4",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-dropzone": "^12.0.5",
+    "react-firebase-hooks": "^5.0.3",
+    "react-hook-form": "^7.30.0",
+    "react-icons": "^4.3.1",
+    "react-markdown": "^8.0.3",
+    "react-textarea-autosize": "^8.3.3",
+    "remark-gfm": "^3.0.1",
+    "sass": "^1.50.1",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-next": "12.1.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-react": "^7.29.4",
+    "prettier": "^2.6.2",
+    "react-copy-to-clipboard": "^5.1.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+    "env": {
+        "es2021": true,
+        "node": true,
+        "jest": true
+    },
+    "extends": ["plugin:react/recommended", "standard", "prettier", "next/core-web-vitals"],
+    "parserOptions": {
+        "ecmaFeatures": {
+        "jsx": true
+        },
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "plugins": ["react", "prettier"],
+    "rules": {
+        "prettier/prettier": "error",
+        "space-before-function-paren": "off",
+        "react/prop-types": "off"
+    }
+}
