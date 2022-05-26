@@ -20,6 +20,7 @@ import {
   arrayRemove,
   arrayUnion,
   onSnapshot,
+  getDoc,
 } from 'firebase/firestore'
 
 // Diretórios
@@ -69,8 +70,9 @@ export const VoteButtons = ({ post, ...rest }) => {
     //   })
 
     const postRef = doc(db, 'posts', post.id)
+    const postSnap = await getDoc(postRef)
     await updateDoc(postRef, {
-      upvotes: post.upvotes?.includes(currentUser.uid)
+      upvotes: postSnap.data().upvotes?.includes(currentUser.uid)
         ? arrayRemove(currentUser.uid)
         : arrayUnion(currentUser.uid),
     })
@@ -98,8 +100,9 @@ export const VoteButtons = ({ post, ...rest }) => {
     //   })
 
     const postRef = doc(db, 'posts', post.id)
+    const postSnap = await getDoc(postRef)
     await updateDoc(postRef, {
-      downvotes: post.downvotes?.includes(currentUser.uid)
+      downvotes: postSnap.data().downvotes?.includes(currentUser.uid)
         ? arrayRemove(currentUser.uid)
         : arrayUnion(currentUser.uid),
     })
