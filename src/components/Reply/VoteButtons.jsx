@@ -20,6 +20,7 @@ import {
   arrayRemove,
   arrayUnion,
   onSnapshot,
+  getDoc,
 } from 'firebase/firestore'
 
 // Diretórios
@@ -70,8 +71,9 @@ export const VoteButtons = ({ comment, ...rest }) => {
     //   })
 
     const commentRef = doc(db, 'comments', comment.id)
+    const commentSnap = await getDoc(commentRef)
     await updateDoc(commentRef, {
-      upvotes: comment.upvotes?.includes(currentUser?.uid)
+      upvotes: commentSnap.data().upvotes?.includes(currentUser?.uid)
         ? arrayRemove(currentUser.uid)
         : arrayUnion(currentUser.uid),
     })
@@ -99,8 +101,9 @@ export const VoteButtons = ({ comment, ...rest }) => {
     //   })
 
     const commentRef = doc(db, 'comments', comment.id)
+    const commentSnap = await getDoc(commentRef)
     await updateDoc(commentRef, {
-      downvotes: comment.downvotes?.includes(currentUser?.uid)
+      downvotes: commentSnap.data().downvotes?.includes(currentUser?.uid)
         ? arrayRemove(currentUser.uid)
         : arrayUnion(currentUser.uid),
     })
